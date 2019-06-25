@@ -4,4 +4,4 @@ services:
 before_install:
         - docker build -t needchai/test-docker -f Dockerfile.dev .
 script:
-        - docker run needchai/test-docker npm run test -- --coverage
+        - docker run -e CI=true needchai/test-docker npm run test -- --coverage
